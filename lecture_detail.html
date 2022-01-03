@@ -79,7 +79,7 @@
                                         '            <p>' + lecture.description + '</p>' +
                                         '        </div>' +
                                         '        <br>' +
-                                        '        <iframe width="1200" height="600" src="' + lecture.video_link + '" title="channel-welcome" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen/>' +
+                                        '        <iframe id="youtube_video_iframe" src="' + lecture.video_link + '" title="channel-welcome" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen/>' +
                                         '        <br>' +
                                         '        <p>' + lecture.content + '</p>' +
                                         '    </div>' +
@@ -92,7 +92,12 @@
                 }
             }
         });
-        
+        $(function() {
+            var video = $('#youtube_video_iframe');
+            var width = video.width();
+            
+            video.css('height', 0.624 * width);
+        });
     </script>
 </body>
 </html>
